@@ -1,0 +1,154 @@
+openapi: 3.0.1
+info:
+  title: Inditex Technical Test
+  description: Technical test carried out for Inditex
+  contact:
+    email: alioth865@yahoo.com
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+tags:
+  - name: brand
+    description: Operations related to brand
+  - name: product
+    description: Operations related to product
+  - name: price
+    description: Operations related to price
+paths:
+  /brand:
+    get:
+      tags:
+        - brand
+      summary: Get all brands
+      operationId: getBrands
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Brand'
+  /product:
+    get:
+      tags:
+        - product
+      summary: Get all products
+      operationId: getProducts
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+  /brand/{brandId}/product/{productId}/price/{dateTime}:
+    get:
+      tags:
+        - price
+      summary: Get price of a product in a brand on a specific date
+      operationId: getPriceByBrandAndProductAndDate
+      parameters:
+        - name: brandId
+          in: path
+          required: true
+          description: Brand identifier
+          schema:
+            type: integer
+            format: int64
+            example: 1
+        - name: productId
+          in: path
+          required: true
+          description: Product identifier
+          schema:
+            type: integer
+            format: int64
+            example: 35455
+        - name: dateTime
+          in: path
+          required: true
+          description: Date and time of the price
+          schema:
+            type: string
+            format: date-time
+            example: "2020-06-14T00:00:00Z"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PriceResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Invalid request. Please check your input data."
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Price not found"
+components:
+  schemas:
+    Brand:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1
+        name:
+          type: string
+          example: Zara
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 35455
+        name:
+          type: string
+          example: T-shirt
+    PriceResponse:
+      type: object
+      properties:
+        productId:
+          type: integer
+          format: int64
+          example: 35455
+        brandId:
+          type: integer
+          format: int64
+          example: 1
+        tariffId:
+          type: integer
+          format: int64
+          example: 1
+        startDate:
+          type: string
+          format: date-time
+          example: 2020-06-14T00:00:00Z
+        endDate:
+          type: string
+          format: date-time
+          example: 2020-12-31T23:59:59Z
+        price:
+          type: number
+          format: double
+          example: 35.50

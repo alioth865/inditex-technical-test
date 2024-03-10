@@ -74,8 +74,8 @@ paths:
           description: Date and time of the price
           schema:
             type: string
-            format: date-time
-            example: "2020-06-14T00:00:00Z"
+            pattern: '^\d{4}-\d{2}-\d{2}-\d{2}\.\d{2}\.\d{2}$'
+            example: "2020-06-14-00.00.00"
       responses:
         '200':
           description: Successful operation
@@ -142,12 +142,12 @@ components:
           example: 1
         startDate:
           type: string
-          format: date-time
-          example: 2020-06-14T00:00:00Z
+          pattern: '^\d{4}-\d{2}-\d{2}-\d{2}\.\d{2}\.\d{2}$'
+          example: "2020-06-14-00.00.00"
         endDate:
           type: string
-          format: date-time
-          example: 2020-12-31T23:59:59Z
+          pattern: '^\d{4}-\d{2}-\d{2}-\d{2}\.\d{2}\.\d{2}$'
+          example: "2020-06-14-00.00.00"
         price:
           type: number
           format: double

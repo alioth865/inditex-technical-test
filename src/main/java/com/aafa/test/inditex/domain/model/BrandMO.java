@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 public class BrandMO {
-  private Long id;
-  private String name;
+    private Long id;
+    private String name;
 }

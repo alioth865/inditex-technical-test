@@ -8,7 +8,7 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface PriceResponseDtoMapper {
 
-  @Mapping(target = "startDate", expression = "java(priceMO.getStartDate().toString())")
-  @Mapping(target = "endDate", expression = "java(priceMO.getEndDate().toString())")
-  PriceResponse toDto(PriceMO priceMO);
+    @Mapping(target = "startDate", expression = "java(priceMO.getStartDate().toString())")
+    @Mapping(target = "endDate", expression = "java(priceMO.getEndDate().toString())")
+    PriceResponse toDto(PriceMO priceMO);
 }

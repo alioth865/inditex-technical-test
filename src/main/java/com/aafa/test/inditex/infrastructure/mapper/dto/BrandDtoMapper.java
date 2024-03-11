@@ -2,15 +2,15 @@ package com.aafa.test.inditex.infrastructure.mapper.dto;
 
 import com.aafa.test.inditex.domain.model.BrandMO;
 import com.aafa.test.inditex.infrastructure.dto.Brand;
-import java.util.List;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+
+import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface BrandDtoMapper {
 
 
-  Brand toDto(BrandMO brandMO);
+    Brand toDto(BrandMO brandMO);
 
-  List<Brand> toDtoList(List<BrandMO> brandMOList);
+    List<Brand> toDtoList(List<BrandMO> brandMOList);
 }

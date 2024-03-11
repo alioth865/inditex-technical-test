@@ -9,13 +9,13 @@ import java.util.List;
 @UseCase
 public class GetBrandsUseCase {
 
-  private final BrandRepositoryPort brandRepositoryPort;
+    private final BrandRepositoryPort brandRepositoryPort;
 
-  public GetBrandsUseCase(BrandRepositoryPort brandRepositoryPort) {
-    this.brandRepositoryPort = brandRepositoryPort;
-  }
+    public GetBrandsUseCase(BrandRepositoryPort brandRepositoryPort) {
+        this.brandRepositoryPort = brandRepositoryPort;
+    }
 
-  public List<BrandMO> execute() {
-    return brandRepositoryPort.findAll();
-  }
+    public List<BrandMO> execute() {
+        return brandRepositoryPort.findAll();
+    }
 }

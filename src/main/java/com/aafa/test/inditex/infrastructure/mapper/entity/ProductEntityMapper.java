@@ -8,7 +8,7 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface ProductEntityMapper {
-  List<ProductMO> toProductMOList(List<ProductEntity> all);
+    List<ProductMO> toProductMOList(List<ProductEntity> all);
 
-  ProductMO toProductMO(ProductEntity productEntity);
+    ProductMO toProductMO(ProductEntity productEntity);
 }

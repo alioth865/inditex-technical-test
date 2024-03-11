@@ -4,17 +4,17 @@ import com.aafa.test.inditex.domain.model.ProductMO;
 import com.aafa.test.inditex.domain.ports.ProductRepositoryPort;
 import com.aafa.test.inditex.infrastructure.database.repositories.ProductJPARepository;
 import com.aafa.test.inditex.infrastructure.mapper.entity.ProductEntityMapper;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 import java.util.Optional;
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Repository;
 
 @Repository
 public class ProductRepositoryH2Adapter implements ProductRepositoryPort {
 
-  private final ProductJPARepository productJPARepository;
+    private final ProductJPARepository productJPARepository;
 
-  private final ProductEntityMapper mapper;
+    private final ProductEntityMapper mapper;
 
     public ProductRepositoryH2Adapter(ProductJPARepository productJPARepository, ProductEntityMapper mapper) {
         this.productJPARepository = productJPARepository;
@@ -22,12 +22,12 @@ public class ProductRepositoryH2Adapter implements ProductRepositoryPort {
     }
 
     @Override
-  public List<ProductMO> findAll() {
-    return mapper.toProductMOList(productJPARepository.findAll());
-  }
+    public List<ProductMO> findAll() {
+        return mapper.toProductMOList(productJPARepository.findAll());
+    }
 
-  @Override
-  public Optional<ProductMO> findById(Long id) {
-    return productJPARepository.findById(id).map(mapper::toProductMO);
-  }
+    @Override
+    public Optional<ProductMO> findById(Long id) {
+        return productJPARepository.findById(id).map(mapper::toProductMO);
+    }
 }

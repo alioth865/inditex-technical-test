@@ -1,13 +1,12 @@
 package com.aafa.test.inditex.infrastructure.database.entities;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "price")
@@ -16,34 +15,34 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class PriceEntity {
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-  @ManyToOne
-  @JoinColumn(name = "BRAND_ID")
-  private BrandEntity brand;
+    @ManyToOne
+    @JoinColumn(name = "BRAND_ID")
+    private BrandEntity brand;
 
-  @Column(name = "START_DATE", columnDefinition = "TIMESTAMP")
-  private LocalDateTime startDate;
+    @Column(name = "START_DATE", columnDefinition = "TIMESTAMP")
+    private LocalDateTime startDate;
 
-  @Column(name = "END_DATE", columnDefinition = "TIMESTAMP")
-  private LocalDateTime endDate;
+    @Column(name = "END_DATE", columnDefinition = "TIMESTAMP")
+    private LocalDateTime endDate;
 
-  @Column(name = "PRICE_LIST")
-  private Integer tariffId;
+    @Column(name = "PRICE_LIST")
+    private Integer tariffId;
 
-  @ManyToOne
-  @JoinColumn(name = "PRODUCT_ID")
-  private ProductEntity product;
+    @ManyToOne
+    @JoinColumn(name = "PRODUCT_ID")
+    private ProductEntity product;
 
-  @Column(name = "PRIORITY")
-  private Integer priority;
+    @Column(name = "PRIORITY")
+    private Integer priority;
 
-  @Column(name = "PRICE")
-  private Double price;
+    @Column(name = "PRICE")
+    private Double price;
 
-  @Column(name = "CURR")
-  private String currency;
+    @Column(name = "CURR")
+    private String currency;
 
 }

@@ -40,7 +40,7 @@ A continuación, se presentan ejemplos de cómo realizar peticiones al servicio 
 
 ```bash
 # Peticion para obtener el precio del product 35455  en la brand 1 el 2020-06-14-00.00.00
-curl -X GET "http://localhost:8080/brands/1/product/35455/price/2020-06-14-00.00.00" -H "accept: application/json"
+curl -X GET "http://localhost:8080/brand/1/product/35455/price/2020-06-14-00.00.00" -H "accept: application/json"
 
 # Peticion para obtener todas las marcas
 curl -X GET "http://localhost:8080/brands" -H "accept: application/json"

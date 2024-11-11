@@ -1,4 +1,4 @@
-package com.aafa.test.inditex.infrastructure.mapper.dto;
+package com.aafa.test.inditex.infrastructure.mapper.brand;
 
 import com.aafa.test.inditex.domain.model.BrandMO;
 import com.aafa.test.inditex.infrastructure.dto.Brand;

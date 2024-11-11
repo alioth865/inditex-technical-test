@@ -1,8 +1,9 @@
-package com.aafa.test.inditex.infrastructure.controller;
+package com.aafa.test.inditex.infrastructure.controller.price;
 
-import com.aafa.test.inditex.application.usecase.GetPriceUseCase;
+import com.aafa.test.inditex.application.usecase.price.GetPriceUseCase;
+import com.aafa.test.inditex.infrastructure.controller.PriceApi;
 import com.aafa.test.inditex.infrastructure.dto.PriceResponse;
-import com.aafa.test.inditex.infrastructure.mapper.dto.PriceResponseDtoMapper;
+import com.aafa.test.inditex.infrastructure.mapper.price.PriceResponseDtoMapper;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import org.springframework.http.ResponseEntity;

@@ -1,9 +1,10 @@
-package com.aafa.test.inditex.infrastructure.controller;
+package com.aafa.test.inditex.infrastructure.controller.product;
 
-import com.aafa.test.inditex.application.usecase.GetProductByIdUseCase;
-import com.aafa.test.inditex.application.usecase.GetProductsUseCase;
+import com.aafa.test.inditex.application.usecase.product.GetProductByIdUseCase;
+import com.aafa.test.inditex.application.usecase.product.GetProductsUseCase;
+import com.aafa.test.inditex.infrastructure.controller.ProductApi;
 import com.aafa.test.inditex.infrastructure.dto.Product;
-import com.aafa.test.inditex.infrastructure.mapper.dto.ProductDtoMapper;
+import com.aafa.test.inditex.infrastructure.mapper.product.ProductDtoMapper;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;

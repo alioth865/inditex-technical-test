@@ -5,8 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
 import com.aafa.test.inditex.application.exception.ProductNotFoundException;
+import com.aafa.test.inditex.application.usecase.product.GetProductByIdUseCase;
 import com.aafa.test.inditex.domain.model.ProductMO;
-import com.aafa.test.inditex.domain.ports.ProductRepositoryPort;
+import com.aafa.test.inditex.domain.ports.outbound.ProductRepositoryPort;
 import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

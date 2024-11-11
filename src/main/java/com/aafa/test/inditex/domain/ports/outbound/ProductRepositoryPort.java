@@ -1,4 +1,4 @@
-package com.aafa.test.inditex.domain.ports;
+package com.aafa.test.inditex.domain.ports.outbound;
 
 import com.aafa.test.inditex.domain.model.ProductMO;
 import java.util.List;

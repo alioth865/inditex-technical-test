@@ -3,10 +3,11 @@ package com.aafa.test.inditex.infrastructure.controller;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
-import com.aafa.test.inditex.application.usecase.GetPriceUseCase;
+import com.aafa.test.inditex.application.usecase.price.GetPriceUseCase;
 import com.aafa.test.inditex.domain.model.PriceMO;
+import com.aafa.test.inditex.infrastructure.controller.price.PriceController;
 import com.aafa.test.inditex.infrastructure.dto.PriceResponse;
-import com.aafa.test.inditex.infrastructure.mapper.dto.PriceResponseDtoMapper;
+import com.aafa.test.inditex.infrastructure.mapper.price.PriceResponseDtoMapper;
 import java.time.LocalDateTime;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

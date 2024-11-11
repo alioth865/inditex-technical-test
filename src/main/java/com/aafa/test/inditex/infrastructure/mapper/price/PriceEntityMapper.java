@@ -1,4 +1,4 @@
-package com.aafa.test.inditex.infrastructure.mapper.entity;
+package com.aafa.test.inditex.infrastructure.mapper.price;
 
 import com.aafa.test.inditex.domain.model.PriceMO;
 import com.aafa.test.inditex.infrastructure.database.entities.PriceEntity;

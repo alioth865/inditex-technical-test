@@ -7,7 +7,7 @@ import static org.mockito.Mockito.when;
 import com.aafa.test.inditex.domain.model.ProductMO;
 import com.aafa.test.inditex.infrastructure.database.entities.ProductEntity;
 import com.aafa.test.inditex.infrastructure.database.repositories.ProductJPARepository;
-import com.aafa.test.inditex.infrastructure.mapper.entity.ProductEntityMapper;
+import com.aafa.test.inditex.infrastructure.mapper.product.ProductEntityMapper;
 import java.util.Collections;
 import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;

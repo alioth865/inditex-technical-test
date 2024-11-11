@@ -1,11 +1,11 @@
-package com.aafa.test.inditex.domain.ports;
+package com.aafa.test.inditex.domain.ports.outbound;
 
 import com.aafa.test.inditex.domain.model.PriceMO;
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Optional;
 
 public interface PriceRepositoryPort {
 
-    List<PriceMO> findByBrandIdAndProductIdAndDate(
+    Optional<PriceMO> findByBrandIdAndProductIdAndDate(
         Long brandId, Long productId, LocalDateTime dateTime);
 }

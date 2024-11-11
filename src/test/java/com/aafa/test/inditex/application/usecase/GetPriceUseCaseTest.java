@@ -5,11 +5,11 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
 import com.aafa.test.inditex.application.exception.PriceNotFoundException;
+import com.aafa.test.inditex.application.usecase.price.GetPriceUseCase;
 import com.aafa.test.inditex.domain.model.PriceMO;
-import com.aafa.test.inditex.domain.ports.PriceRepositoryPort;
+import com.aafa.test.inditex.domain.ports.outbound.PriceRepositoryPort;
 import java.time.LocalDateTime;
-import java.util.Collections;
-import java.util.List;
+import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -36,10 +36,9 @@ class GetPriceUseCaseTest {
         LocalDateTime date = LocalDateTime.now();
         var price = 100.0;
         var priceWithLowerPriority = PriceMO.builder().price(price).priority(0).build();
-        var priceWithHigherPriority = PriceMO.builder().price(price * 2).priority(1).build();
 
         when(priceRepositoryPort.findByBrandIdAndProductIdAndDate(brandId, productId, date))
-            .thenReturn(List.of(priceWithLowerPriority, priceWithHigherPriority));
+            .thenReturn(Optional.of(priceWithLowerPriority));
 
         PriceMO actualPrice = getPriceUseCase.execute(productId, brandId, date);
 
@@ -53,7 +52,7 @@ class GetPriceUseCaseTest {
         Long brandId = 1L;
         LocalDateTime date = LocalDateTime.now();
         when(priceRepositoryPort.findByBrandIdAndProductIdAndDate(brandId, productId, date))
-            .thenReturn(Collections.emptyList());
+            .thenReturn(Optional.empty());
 
         assertThrows(PriceNotFoundException.class,
             () -> getPriceUseCase.execute(productId, brandId, date));

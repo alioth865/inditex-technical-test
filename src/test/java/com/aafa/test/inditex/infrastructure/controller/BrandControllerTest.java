@@ -3,11 +3,12 @@ package com.aafa.test.inditex.infrastructure.controller;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
-import com.aafa.test.inditex.application.usecase.GetBrandByIdUseCase;
-import com.aafa.test.inditex.application.usecase.GetBrandsUseCase;
+import com.aafa.test.inditex.application.usecase.brand.GetBrandByIdUseCase;
+import com.aafa.test.inditex.application.usecase.brand.GetBrandsUseCase;
 import com.aafa.test.inditex.domain.model.BrandMO;
+import com.aafa.test.inditex.infrastructure.controller.brand.BrandController;
 import com.aafa.test.inditex.infrastructure.dto.Brand;
-import com.aafa.test.inditex.infrastructure.mapper.dto.BrandDtoMapper;
+import com.aafa.test.inditex.infrastructure.mapper.brand.BrandDtoMapper;
 import java.util.Collections;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;

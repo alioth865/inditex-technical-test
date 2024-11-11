@@ -5,9 +5,9 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.aafa.test.inditex.infrastructure.database.repositories.PriceJPARepository;
-import com.aafa.test.inditex.infrastructure.mapper.entity.PriceEntityMapper;
+import com.aafa.test.inditex.infrastructure.mapper.price.PriceEntityMapper;
 import java.time.LocalDateTime;
-import java.util.Collections;
+import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -35,19 +35,18 @@ class PriceRepositoryH2AdapterTest {
         var brandId = 1L;
         var productId = 1L;
         var dateTime = LocalDateTime.now();
-        var priceEntities = Collections.singletonList(
-            new com.aafa.test.inditex.infrastructure.database.entities.PriceEntity());
-        var priceMOs = Collections.singletonList(new com.aafa.test.inditex.domain.model.PriceMO());
+        var priceEntity = new com.aafa.test.inditex.infrastructure.database.entities.PriceEntity();
+        var priceMO = new com.aafa.test.inditex.domain.model.PriceMO();
         when(priceJPARepository.findPriceByBrandProductAndDateTime(brandId, productId,
-            dateTime)).thenReturn(priceEntities);
-        when(priceEntityMapper.toPriceList(priceEntities)).thenReturn(priceMOs);
+            dateTime)).thenReturn(Optional.of(priceEntity));
+        when(priceEntityMapper.toPrice(priceEntity)).thenReturn(priceMO);
 
         var actual = priceRepositoryH2Adapter.findByBrandIdAndProductIdAndDate(brandId, productId,
             dateTime);
 
-        assertEquals(priceMOs, actual);
+        assertEquals(Optional.of(priceMO), actual);
         verify(priceJPARepository).findPriceByBrandProductAndDateTime(brandId, productId, dateTime);
-        verify(priceEntityMapper).toPriceList(priceEntities);
+        verify(priceEntityMapper).toPrice(priceEntity);
     }
 
 

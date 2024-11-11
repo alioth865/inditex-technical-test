@@ -1,11 +1,11 @@
 package com.aafa.test.inditex.infrastructure.database.adapter;
 
 import com.aafa.test.inditex.domain.model.PriceMO;
-import com.aafa.test.inditex.domain.ports.PriceRepositoryPort;
+import com.aafa.test.inditex.domain.ports.outbound.PriceRepositoryPort;
 import com.aafa.test.inditex.infrastructure.database.repositories.PriceJPARepository;
-import com.aafa.test.inditex.infrastructure.mapper.entity.PriceEntityMapper;
+import com.aafa.test.inditex.infrastructure.mapper.price.PriceEntityMapper;
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Optional;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -22,9 +22,9 @@ public class PriceRepositoryH2Adapter implements PriceRepositoryPort {
     }
 
     @Override
-    public List<PriceMO> findByBrandIdAndProductIdAndDate(
+    public Optional<PriceMO> findByBrandIdAndProductIdAndDate(
         Long brandId, Long productId, LocalDateTime dateTime) {
-        return priceEntityMapper.toPriceList(
-            priceJPARepository.findPriceByBrandProductAndDateTime(brandId, productId, dateTime));
+        return priceJPARepository.findPriceByBrandProductAndDateTime(brandId, productId, dateTime)
+            .map(priceEntityMapper::toPrice);
     }
 }

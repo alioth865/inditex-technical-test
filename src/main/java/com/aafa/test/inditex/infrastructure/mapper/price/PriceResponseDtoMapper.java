@@ -1,4 +1,4 @@
-package com.aafa.test.inditex.infrastructure.mapper.dto;
+package com.aafa.test.inditex.infrastructure.mapper.price;
 
 import com.aafa.test.inditex.domain.model.PriceMO;
 import com.aafa.test.inditex.infrastructure.dto.PriceResponse;

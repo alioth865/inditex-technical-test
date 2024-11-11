@@ -1,9 +1,9 @@
 package com.aafa.test.inditex.infrastructure.database.adapter;
 
 import com.aafa.test.inditex.domain.model.ProductMO;
-import com.aafa.test.inditex.domain.ports.ProductRepositoryPort;
+import com.aafa.test.inditex.domain.ports.outbound.ProductRepositoryPort;
 import com.aafa.test.inditex.infrastructure.database.repositories.ProductJPARepository;
-import com.aafa.test.inditex.infrastructure.mapper.entity.ProductEntityMapper;
+import com.aafa.test.inditex.infrastructure.mapper.product.ProductEntityMapper;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Repository;

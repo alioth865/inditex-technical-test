@@ -1,9 +1,10 @@
-package com.aafa.test.inditex.infrastructure.controller;
+package com.aafa.test.inditex.infrastructure.controller.brand;
 
-import com.aafa.test.inditex.application.usecase.GetBrandByIdUseCase;
-import com.aafa.test.inditex.application.usecase.GetBrandsUseCase;
+import com.aafa.test.inditex.application.usecase.brand.GetBrandByIdUseCase;
+import com.aafa.test.inditex.application.usecase.brand.GetBrandsUseCase;
+import com.aafa.test.inditex.infrastructure.controller.BrandApi;
 import com.aafa.test.inditex.infrastructure.dto.Brand;
-import com.aafa.test.inditex.infrastructure.mapper.dto.BrandDtoMapper;
+import com.aafa.test.inditex.infrastructure.mapper.brand.BrandDtoMapper;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;

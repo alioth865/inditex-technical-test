@@ -1,14 +1,14 @@
-package com.aafa.test.inditex.application.usecase;
+package com.aafa.test.inditex.application.usecase.price;
 
 import com.aafa.test.inditex.annotation.UseCase;
 import com.aafa.test.inditex.application.exception.PriceNotFoundException;
 import com.aafa.test.inditex.domain.model.PriceMO;
-import com.aafa.test.inditex.domain.ports.PriceRepositoryPort;
+import com.aafa.test.inditex.domain.ports.inbound.price.GetPricePort;
+import com.aafa.test.inditex.domain.ports.outbound.PriceRepositoryPort;
 import java.time.LocalDateTime;
-import java.util.Comparator;
 
 @UseCase
-public class GetPriceUseCase {
+public class GetPriceUseCase implements GetPricePort {
 
     private final PriceRepositoryPort priceRepositoryPort;
 
@@ -18,12 +18,10 @@ public class GetPriceUseCase {
         this.priceRepositoryPort = priceRepositoryPort;
     }
 
+    @Override
     public PriceMO execute(Long productId, Long brandId, LocalDateTime date) {
         return priceRepositoryPort
             .findByBrandIdAndProductIdAndDate(brandId, productId, date)
-            .stream()
-            // Asumimos que la prioridad es unica
-            .min(Comparator.comparing(PriceMO::getPriority))
             .orElseThrow(() -> new PriceNotFoundException(productId, brandId, date));
     }
 }

@@ -8,7 +8,7 @@ import static org.mockito.Mockito.when;
 import com.aafa.test.inditex.domain.model.BrandMO;
 import com.aafa.test.inditex.infrastructure.database.entities.BrandEntity;
 import com.aafa.test.inditex.infrastructure.database.repositories.BrandJPARepository;
-import com.aafa.test.inditex.infrastructure.mapper.entity.BrandEntityMapper;
+import com.aafa.test.inditex.infrastructure.mapper.brand.BrandEntityMapper;
 import java.util.Collections;
 import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;

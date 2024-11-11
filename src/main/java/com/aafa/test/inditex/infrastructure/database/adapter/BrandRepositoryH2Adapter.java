@@ -1,9 +1,9 @@
 package com.aafa.test.inditex.infrastructure.database.adapter;
 
 import com.aafa.test.inditex.domain.model.BrandMO;
-import com.aafa.test.inditex.domain.ports.BrandRepositoryPort;
+import com.aafa.test.inditex.domain.ports.outbound.BrandRepositoryPort;
 import com.aafa.test.inditex.infrastructure.database.repositories.BrandJPARepository;
-import com.aafa.test.inditex.infrastructure.mapper.entity.BrandEntityMapper;
+import com.aafa.test.inditex.infrastructure.mapper.brand.BrandEntityMapper;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Repository;

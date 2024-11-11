@@ -1,4 +1,4 @@
-package com.aafa.test.inditex.infrastructure.mapper.entity;
+package com.aafa.test.inditex.infrastructure.mapper.product;
 
 import com.aafa.test.inditex.domain.model.ProductMO;
 import com.aafa.test.inditex.infrastructure.database.entities.ProductEntity;

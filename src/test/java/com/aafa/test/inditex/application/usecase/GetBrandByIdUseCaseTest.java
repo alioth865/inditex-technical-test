@@ -5,8 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
 import com.aafa.test.inditex.application.exception.BrandNotFoundException;
+import com.aafa.test.inditex.application.usecase.brand.GetBrandByIdUseCase;
 import com.aafa.test.inditex.domain.model.BrandMO;
-import com.aafa.test.inditex.domain.ports.BrandRepositoryPort;
+import com.aafa.test.inditex.domain.ports.outbound.BrandRepositoryPort;
 import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

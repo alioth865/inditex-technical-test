@@ -3,8 +3,9 @@ package com.aafa.test.inditex.application.usecase;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
+import com.aafa.test.inditex.application.usecase.product.GetProductsUseCase;
 import com.aafa.test.inditex.domain.model.ProductMO;
-import com.aafa.test.inditex.domain.ports.ProductRepositoryPort;
+import com.aafa.test.inditex.domain.ports.outbound.ProductRepositoryPort;
 import java.util.Collections;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
